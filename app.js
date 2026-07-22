@@ -1,4 +1,4 @@
-const API_URL = "https://gnews.io/api/v4/top-headlines?token=40ad0da34aaed04884fd41e341e16af1&lang=es&country=mx";
+const API_URL = "https://gnews.io/api/v4/everything?token=40ad0da34aaed04884fd41e341e16af1&lang=es&country=mx";
 const newsContainer = document.getElementById("newsContainer");
 const refreshBtn = document.getElementById("refreshBtn");
 
