@@ -1,12 +1,12 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(180deg, #000000, #7f7f7f); /* degradado negro a blanco */
+  background: linear-gradient(180deg, #0b1a33, #7f7f7f); /* degradado azul oscuro a gris */
   color: #e0e0e0; /* texto claro para contraste */
 }
 
 header {
-  background: radial-gradient(circle, #000000 0%, #898989 100%);
+  background: radial-gradient(circle, #0b1a33 0%, #898989 100%); /* azul oscuro al centro difuminado hacia gris */
   color: #f5f5f5;
   padding: 1.5rem;
   text-align: center;
@@ -14,12 +14,11 @@ header {
   letter-spacing: 1px;
 }
 
-
 button {
   margin-top: 10px;
   padding: 12px 18px;
   border: none;
-  background: linear-gradient(90deg, #3a3a3a, #000000); /* gris oscuro con negro */
+  background: linear-gradient(90deg, #3a4a61, #0b1a33); /* gris azulado con azul oscuro */
   color: #f5f5f5;
   cursor: pointer;
   border-radius: 6px;
@@ -28,28 +27,28 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(90deg, #555555, #000000); /* más contraste al pasar el mouse */
+  background: linear-gradient(90deg, #556b8a, #0b1a33); /* más contraste al pasar el mouse */
   transform: scale(1.05);
 }
 
 #newsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   padding: 1.5rem;
 }
 
 .news-item {
-  background: linear-gradient(180deg, #2c2c2c, #1a1a1a); /* tarjeta con gradiente gris oscuro */
+  background: linear-gradient(180deg, #2c3e50, #1a2733); /* tonos azul grisáceo oscuros */
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* sombra marcada */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .news-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.8); /* efecto de elevación */
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.8);
 }
 
 .news-item h2 {
@@ -61,11 +60,11 @@ button:hover {
 }
 
 .news-item h2:hover {
-  color: #cccccc; /* gris más suave al pasar el mouse */
+  color: #a3c9f9; /* azul claro al pasar el mouse */
 }
 
 .news-item p {
   margin-top: 0.5rem;
-  color: #d0d0d0; /* gris medio para texto */
+  color: #d0d0d0;
   line-height: 1.4;
 }
