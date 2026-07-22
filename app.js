@@ -1,29 +1,32 @@
-const API_URL = "https://gnews.io/api/v4/everything?token=40ad0da34aaed04884fd41e341e16af1&lang=es&country=mx";
+const BASE_URL = "https://api.currentsapi.services/v1/latest-news?language=es&page_size=5";
+const API_KEY = "UzPELL7F1LYoAc-TjDLpWSXb-Fi_ci2Tf_lN2SGwFApowph_"; // reemplaza con tu clave real
 const newsContainer = document.getElementById("newsContainer");
 const refreshBtn = document.getElementById("refreshBtn");
 
-// Función para cargar noticias
 async function loadNews() {
   try {
     newsContainer.innerHTML = "<p>Cargando noticias...</p>";
-    const response = await fetch(API_URL);
+    const response = await fetch(BASE_URL, {
+      headers: { Authorization: `Bearer ${API_KEY}` }
+    });
     if (!response.ok) throw new Error("Error al obtener noticias");
 
     const data = await response.json();
     newsContainer.innerHTML = "";
 
-    if (data.articles.length === 0) {
+    if (!data.news || data.news.length === 0) {
       newsContainer.innerHTML = "<p>No hay noticias disponibles.</p>";
       return;
     }
 
-    data.articles.forEach(article => {
+    data.news.forEach(article => {
       const newsItem = document.createElement("div");
       newsItem.classList.add("news-item");
 
       newsItem.innerHTML = `
         <h2 onclick="window.open('${article.url}', '_blank')">${article.title}</h2>
         <p>${article.description || "Sin descripción disponible."}</p>
+        <small>${article.published}</small>
       `;
 
       newsContainer.appendChild(newsItem);
@@ -33,8 +36,5 @@ async function loadNews() {
   }
 }
 
-// Evento para refrescar noticias
 refreshBtn.addEventListener("click", loadNews);
-
-// Cargar noticias al inicio
 loadNews();
