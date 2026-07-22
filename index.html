@@ -9,13 +9,23 @@
 <body>
   <header>
     <h1>Lector de Noticias en Tiempo Real</h1>
-    <button id="refreshBtn">Refrescar Noticias</button>
+    <input type="text" id="searchInput" placeholder="Buscar tema...">
+    <button id="searchBtn">Buscar</button>
+    <select id="categorySelect">
+      <option value="">Todas</option>
+      <option value="sports">Deportes</option>
+      <option value="technology">Tecnología</option>
+      <option value="business">Negocios</option>
+    </select>
+    <button id="refreshBtn">Refrescar</button>
   </header>
 
   <main>
-    <section id="newsContainer">
-      <!-- Aquí se mostrarán las noticias -->
-    </section>
+    <section id="newsContainer"></section>
+    <div class="pagination">
+      <button id="prevPage">Anterior</button>
+      <button id="nextPage">Siguiente</button>
+    </div>
   </main>
 
   <script src="app.js"></script>
