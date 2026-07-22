@@ -1,53 +1,71 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: #f8f9fa; /* gris muy claro */
-  color: #2c2c2c; /* gris oscuro */
+  background: linear-gradient(180deg, #000000, #7f7f7f); /* degradado negro a blanco */
+  color: #e0e0e0; /* texto claro para contraste */
 }
 
 header {
-  background: #1a2a40; /* azul marino */
-  color: #f1f1f1; /* gris claro */
-  padding: 1rem;
+  background: radial-gradient(circle, #000000 0%, #898989 100%);
+  color: #f5f5f5;
+  padding: 1.5rem;
   text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
+
 
 button {
   margin-top: 10px;
-  padding: 8px 12px;
+  padding: 12px 18px;
   border: none;
-  background: #3b4d61; /* gris azulado */
-  color: #f1f1f1;
+  background: linear-gradient(90deg, #3a3a3a, #000000); /* gris oscuro con negro */
+  color: #f5f5f5;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #2a3a4d; /* más oscuro al pasar el mouse */
+  background: linear-gradient(90deg, #555555, #000000); /* más contraste al pasar el mouse */
+  transform: scale(1.05);
 }
 
 #newsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1.2rem;
+  padding: 1.5rem;
 }
 
 .news-item {
-  background: #ffffff;
+  background: linear-gradient(180deg, #2c2c2c, #1a1a1a); /* tarjeta con gradiente gris oscuro */
   padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* sombra marcada */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.8); /* efecto de elevación */
 }
 
 .news-item h2 {
   margin: 0;
-  font-size: 1.2rem;
-  color: #1a2a40; /* azul marino para títulos */
+  font-size: 1.3rem;
+  color: #f5f5f5; /* títulos claros */
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.news-item h2:hover {
+  color: #cccccc; /* gris más suave al pasar el mouse */
 }
 
 .news-item p {
   margin-top: 0.5rem;
-  color: #444444; /* gris medio para texto */
+  color: #d0d0d0; /* gris medio para texto */
+  line-height: 1.4;
 }
